@@ -1,0 +1,80 @@
+export const dosenList = [
+  {
+    nama: "Muhammad Nur Ikhsan, S.Kom., M.Eng",
+    foto: "/images/dosen/Muhammad Nur Ikhsan, S.T.,M.Eng.jpg",
+    bidang: "Dekan Fakultas Teknik",
+    kontak: "mnurikhsan@untara.ac.id",
+  },
+  {
+    nama: "Saryani.,S.Kom.,M.TI",
+    foto: "/images/dosen/Saryani.,S.Kom.,M.TI.png",
+    bidang: "Kaprodi Teknologi Informasi",
+    kontak: "saryani@untara.ac.id",
+  },
+  {
+    nama: "Fabio Junior.,S.Kom.,M.Kom",
+    foto: "/images/dosen/Fabio Junior.,S.Kom.,M.Kom.png",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "fabioj@untara.ac.id",
+  },
+  {
+    nama: "Irawan.,S.Kom.,M.Kom",
+    foto: "/images/dosen/Irawan.,S.Kom.,M.Kom.png",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "irawan@untara.ac.id",
+  },
+  {
+    nama: "Rika Nurhidayah.,S.Kom.,M.Kom",
+    foto: "/images/dosen/Rika Nurhidayah.,S.Kom.,MM.png",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "rikanurhidayah@untara.ac.id",
+  },
+  {
+    nama: "Kevin Septianzah, S.Kom.,M.Kom",
+    foto: "/images/dosen/Kevin Septianzah, S.Kom.,M.Kom..jpg",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "kevins@untara.ac.id",
+  },
+  {
+    nama: "Septa Febriyansyah.,S.M.,S.Kom.,M.Kom",
+    foto: "/images/dosen/Septa Febriyansyah.,S.M.,S.Kom.,M.Kom.png",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "septaf@untara.ac.id",
+  },
+  {
+    nama: "Amelia Sholikhaq, S.Kom.,M.Kom",
+    foto: "/images/dosen/Amelia Sholikhaq, S.Kom.,M.Kom..jpg",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "amelias@untara.ac.id",
+  },
+  {
+    nama: "R Wahyudi.,ST.,M.Kom",
+    foto: "/images/dosen/R Wahyudi.,ST.,M.Kom.png",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "rwahyudi@untara.ac.id",
+  },
+  {
+    nama: "Bambang Libriantoro,  S.Kom.,M.Kom",
+    foto: "/images/dosen/Bambang Libriantoro,  S.Kom.,M.Kom.jpeg",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "bambangl@untara.ac.id",
+  },
+  {
+    nama: "Ayi Krisnha W.A.N.,S.Kom.,M.Kom",
+    foto: "/images/dosen/AYI KRISNHA W.A.N.jpg",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "ayikrisnha@untara.ac.id",
+  },
+  {
+    nama: "Singgih mitro, s, S.T,M.T.",
+    foto: "/images/dosen/Singgih mitro, s, S.T.,M.T.jpg",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "singgihm@untara.ac.id",
+  },
+  {
+    nama: "Ahmad Deni Muttaqin, S.Kom.,M.Si",
+    foto: "/images/dosen/Ahmad Deni Muttaqin, S.Kom.,M.S.jpg",
+    bidang: "Dosen Teknologi Informasi",
+    kontak: "denim@untara.ac.id",
+  },
+];
