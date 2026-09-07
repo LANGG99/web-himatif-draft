@@ -4,6 +4,8 @@ import Footer from "../component/Footer.vue";
 import { ref, onMounted, onUnmounted } from "vue";
 
 import FaqAccordion from "../component/FaqAccordion.vue";
+import MintifFab from "../component/MintifFab.vue";
+import { tibaDiHalaman } from "../composables/useMintifReveal.js";
 import { useFaq } from "../composables/constants/UseFaq.js";
 
 const { faqList } = useFaq();
@@ -20,6 +22,7 @@ const scrollToTop = () => {
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
+  tibaDiHalaman(); // susutkan circle overlay kalau pulang dari /mintif
 });
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
@@ -116,4 +119,7 @@ onUnmounted(() => {
 
   <!-- Footer -->
   <Footer />
+
+  <!-- FAB Mintif: khusus halaman utama -->
+  <MintifFab />
 </template>

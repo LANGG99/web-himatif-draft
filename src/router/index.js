@@ -5,6 +5,7 @@ import UnderConstruction from "../pages/UnderConstruction.vue";
 import About from "../pages/About.vue";
 import Danus from "../pages/Danus.vue";
 import Advokasi from "../pages/Advokasi.vue";
+import Mintif from "../pages/Mintif.vue";
 
 const routes = [
   { path: "/", component: Home },
@@ -12,6 +13,7 @@ const routes = [
   { path: "/Profile", component: Profile },
   { path: "/Danus", component: Danus },
   { path: "/Advo", component: Advokasi },
+  { path: "/mintif", component: Mintif },
   { path: "/under-construction", component: UnderConstruction },
 
   // Optional: fallback untuk semua rute yang tidak dikenali
