@@ -1,9 +1,7 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-import { useRouter } from "vue-router";
-import { berangkatKeMintif } from "../composables/useMintifReveal.js";
+import { berangkatKeFlask } from "../composables/useMintifReveal.js";
 
-const router = useRouter();
 const tombol = ref(null);
 const showHint = ref(false);
 let hintTimer = null;
@@ -12,6 +10,18 @@ let hintTimer = null;
 onMounted(() => {
   showHint.value = true;
   hintTimer = setTimeout(() => { showHint.value = false; }, 3000);
+  // Preconnect dinamis ke origin Flask (env-aware, tidak bisa hardcode di
+  // index.html karena beda lokal/prod). Motong DNS+TLS lintas origin biar
+  // overlay 455ms tidak keburu selesai sebelum halaman chatbot kepaint.
+  try {
+    const origin = new URL(FLASK_URL).origin;
+    if (!document.querySelector(`link[rel="preconnect"][href="${origin}"]`)) {
+      const link = document.createElement("link");
+      link.rel = "preconnect";
+      link.href = origin;
+      document.head.appendChild(link);
+    }
+  } catch { /* abaikan URL invalid */ }
 });
 onUnmounted(() => { if (hintTimer) clearTimeout(hintTimer); });
 
@@ -20,16 +30,21 @@ function sembunyikanHint() {
   if (hintTimer) { clearTimeout(hintTimer); hintTimer = null; }
 }
 
+// Alamat backend Flask (dash heterogen per environment, kodenya tetap).
+// Dipakai sebagai base URL halaman chatbot juga (satu origin).
+// Lokal: http://localhost:5000 | produksi: https://chat.himatif.xxx
+const FLASK_URL = import.meta.env.VITE_MINTIF_API_URL || "http://localhost:5000";
+
 function klik() {
   sembunyikanHint();
   const el = tombol.value;
   if (!el) {
-    router.push("/mintif");
+    window.location.href = FLASK_URL.replace(/\/+$/, "") + "/chatbot";
     return;
   }
   // titik tengah tombol = origin circle reveal (kayak home.js pillow-fox)
   const r = el.getBoundingClientRect();
-  berangkatKeMintif(r.left + r.width / 2, r.top + r.height / 2, router);
+  berangkatKeFlask(r.left + r.width / 2, r.top + r.height / 2, FLASK_URL);
 }
 </script>
 
@@ -62,6 +77,9 @@ function klik() {
   50% { transform: translateY(-4px); }
 }
 .fab-float { animation: fabFloat 3s ease-in-out infinite; }
+/* pause saat circle reveal jalan (class mintif-anim di <html>, lih. App.vue)
+   biar GPU fokus ke animasi circle. */
+:global(html.mintif-anim .fab-float) { animation-play-state: paused; }
 /* tooltip: fade-slide mulus */
 .fab-hint-enter-active, .fab-hint-leave-active { transition: all 0.3s ease; }
 .fab-hint-enter-from, .fab-hint-leave-to { opacity: 0; transform: translateY(4px); }

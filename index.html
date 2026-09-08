@@ -50,6 +50,31 @@
     />
   </head>
   <body class="font-poppins">
+    <script>
+      (function(){
+        // Kepulangan lintas origin dari Flask (?phase=toHome&ox=&oy=):
+        // set var circle pre-paint biar overlay (#mintifOverlay di App.vue)
+        // mulai ketutup, lalu tibaDiHalaman() yang menyusutkan.
+        try {
+          var q = new URLSearchParams(window.location.search);
+          if (q.get("phase") !== "toHome") return;
+          var x = parseFloat(q.get("ox")), y = parseFloat(q.get("oy"));
+          // Fallback tengah viewport kalau koordinat cacat (jangan return polos),
+          // biar reverse selalu main — sama kayak fallback sisi Flask.
+          var vw0 = window.innerWidth || 1, vh0 = window.innerHeight || 1;
+          if (isNaN(x) || isNaN(y)) { x = vw0 / 2; y = vh0 / 2; }
+          x = Math.min(Math.max(x, 0), vw0);
+          y = Math.min(Math.max(y, 0), vh0);
+          var vw = window.innerWidth, vh = window.innerHeight;
+          // Overlay lingkaran 100px di-scale GPU: s = radius_tutup / 50.
+          var s = Math.hypot(Math.max(x, vw - x), Math.max(y, vh - y)) / 50;
+          var root = document.documentElement;
+          root.style.setProperty("--ox", x + "px");
+          root.style.setProperty("--oy", y + "px");
+          root.style.setProperty("--s", s);
+        } catch(e) {}
+      })();
+    </script>
     <div id="app"></div>
     <script type="module" src="./src/main.js"></script>
   </body>

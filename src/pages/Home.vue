@@ -22,7 +22,7 @@ const scrollToTop = () => {
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
-  tibaDiHalaman(); // susutkan circle overlay kalau pulang dari /mintif
+  tibaDiHalaman(); // susutkan circle overlay kalau pulang dari chatbot Flask
 });
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
