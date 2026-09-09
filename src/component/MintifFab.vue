@@ -1,10 +1,13 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
-import { berangkatKeFlask } from "../composables/useMintifReveal.js";
+import { useRouter } from "vue-router";
+import { berangkatKeFlask, berangkatKeInternal, cekMintifHidup } from "../composables/useMintifReveal.js";
 
 const tombol = ref(null);
 const showHint = ref(false);
+const mengecek = ref(false);
 let hintTimer = null;
+const router = useRouter();
 
 // Tooltip: nongol tiap halaman dibuka/direfresh, hilang sendiri 3 detik
 onMounted(() => {
@@ -35,16 +38,32 @@ function sembunyikanHint() {
 // Lokal: http://localhost:5000 | produksi: https://chat.himatif.xxx
 const FLASK_URL = import.meta.env.VITE_MINTIF_API_URL || "http://localhost:5000";
 
-function klik() {
-  sembunyikanHint();
+function titikTombol() {
   const el = tombol.value;
-  if (!el) {
-    window.location.href = FLASK_URL.replace(/\/+$/, "") + "/chatbot";
-    return;
-  }
+  if (!el) return { x: window.innerWidth / 2, y: window.innerHeight / 2 };
   // titik tengah tombol = origin circle reveal (kayak home.js pillow-fox)
   const r = el.getBoundingClientRect();
-  berangkatKeFlask(r.left + r.width / 2, r.top + r.height / 2, FLASK_URL);
+  return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+}
+
+async function klik() {
+  sembunyikanHint();
+  if (mengecek.value) return; // cegah double-klik pas health-check jalan
+  // Saklar otomatis: Flask hidup -> /chatbot, mati/timeout (max 4 dtk) ->
+  // /mintif-maintenance. Sehat = kelar milidetik, delay cuma pas kondisi MT.
+  mengecek.value = true;
+  let hidup = false;
+  try {
+    hidup = await cekMintifHidup(FLASK_URL);
+  } finally {
+    mengecek.value = false;
+  }
+  const t = titikTombol();
+  if (hidup) {
+    berangkatKeFlask(t.x, t.y, FLASK_URL);
+  } else {
+    berangkatKeInternal(t.x, t.y, "/mintif-maintenance", (p) => router.push(p));
+  }
 }
 </script>
 
@@ -62,8 +81,15 @@ function klik() {
       class="pointer-events-none absolute left-[72px] bottom-3 whitespace-nowrap rounded-2xl bg-gradient-to-r from-cosmos to-errie px-4 py-2.5 text-xs font-bold text-holy opacity-0 ring-1 ring-khaki/60 shadow-blacky translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
       Tanya Mintif
     </div>
+    <!-- tooltip loading pas health-check jalan (max 4 dtk, cuma pas mau MT) -->
+    <transition name="fab-hint">
+      <div v-if="mengecek"
+        class="absolute left-[72px] bottom-3 whitespace-nowrap rounded-2xl bg-gradient-to-r from-cosmos to-errie px-4 py-2.5 text-xs font-bold text-holy ring-1 ring-khaki/60 shadow-blacky">
+        Sebentar, mimin dicek dulu...
+      </div>
+    </transition>
     <!-- tombol: bulet 60px, putih, logo tengah simetris, shadow timbul + float tipis -->
-    <button ref="tombol" @click="klik" aria-label="Buka Mintif"
+    <button ref="tombol" @click="klik" aria-label="Buka Mintif" :aria-busy="mengecek"
       class="fab-float grid h-[60px] w-[60px] place-items-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_50%_38%,#FBFBFB_0%,#AF9D80_58%,#5E141B_100%)] outline-none focus-visible:ring-2 focus-visible:ring-khaki focus-visible:ring-offset-2 focus-visible:ring-offset-errie shadow-[0px_6px_20px_#000,0_0_0_2px_#AF9D80,0_0_28px_rgba(94,20,27,.75)]">
       <img src="/images/mintif-fab.png" alt="Mintif" class="h-full w-full -translate-y-1 object-contain p-1" />
     </button>

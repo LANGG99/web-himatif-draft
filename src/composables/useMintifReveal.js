@@ -87,6 +87,43 @@ export function berangkatKeFlask(x, y, baseUrl) {
   setTimeout(() => { window.location.href = target; }, NAV_TENGAH);
 }
 
+// Timeout health-check saklar otomatis (lock user 9 Sep: 4 detik).
+// Sehat = kelar secepat respons (milidetik); 4 detik cuma kepake pas down.
+export const MT_HEALTH_TIMEOUT = 4000;
+
+// Cek Flask hidup/mati buat saklar otomatis FAB -> /chatbot vs /mintif-maintenance.
+// Pakai `mode: "no-cors"`: CORS Flask cuma dibuka untuk /api/* (pillow-fox
+// app.py:26), jadi GET lintas origin ke /health TIDAK boleh dibaca browser
+// (tanpa header ACAO, mode cors selalu gagal walau server sehat). Dengan
+// no-cors, resolve = server reachable (opaque), reject/timeout = server mati.
+// Artinya cek ini = "server nyala", bukan "status 200".
+export async function cekMintifHidup(baseUrl, timeoutMs = MT_HEALTH_TIMEOUT) {
+  const base = (baseUrl || "").replace(/\/+$/, "");
+  const ctrl = new AbortController();
+  const t = setTimeout(() => { try { ctrl.abort(); } catch {} }, timeoutMs);
+  try {
+    await fetch(base + "/health", { signal: ctrl.signal, mode: "no-cors", cache: "no-store" });
+    return true;
+  } catch {
+    return false;
+  } finally {
+    clearTimeout(t);
+  }
+}
+
+// Berangkat internal (SPA): Home -> /mintif-maintenance dkk. Same-origin,
+// jadi sessionStorage ikut kebawa (beda vs berangkatKeFlask yang wajib tempel
+// query). Circle reveal sama persis: mekar -> pindah di 455ms -> tibaDiHalaman
+// di halaman tujuan yang nyusutin. `navigate` = router.push dari komponen.
+export function berangkatKeInternal(x, y, path, navigate) {
+  const c = clampOrigin(x, y);
+  simpan("mintifOriginX", c.x);
+  simpan("mintifOriginY", c.y);
+  simpan("mintifTransitionPhase", "toMaintenance");
+  mekarDari(c.x, c.y);
+  setTimeout(() => { navigate(path); }, NAV_TENGAH);
+}
+
 function bacaQueryKembali() {
   try {
     const q = new URLSearchParams(window.location.search);
