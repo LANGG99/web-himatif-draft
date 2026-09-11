@@ -6,6 +6,9 @@ import { ref, onMounted, onUnmounted } from "vue";
 import FaqAccordion from "../component/FaqAccordion.vue";
 import { useFaq } from "../composables/constants/UseFaq.js";
 
+import MintifFab from "../component/MintifFab.vue";
+import { tibaDiHalaman } from "../composables/useMintifReveal.js";
+
 const { faqList } = useFaq();
 const sectionRefs = ref([]);
 const showScrollTop = ref(false);
@@ -20,6 +23,7 @@ const scrollToTop = () => {
 
 onMounted(() => {
   window.addEventListener("scroll", handleScroll);
+  tibaDiHalaman(); // susutkan circle overlay kalau pulang dari chatbot Flask
 });
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
@@ -120,4 +124,7 @@ onUnmounted(() => {
 
   <!-- Footer -->
   <Footer />
+
+  <!-- FAB Mintif: khusus halaman utama -->
+  <MintifFab />
 </template>
