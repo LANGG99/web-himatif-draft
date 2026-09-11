@@ -8,9 +8,6 @@ import MintifFab from "../component/MintifFab.vue";
 import { tibaDiHalaman } from "../composables/useMintifReveal.js";
 import { useFaq } from "../composables/constants/UseFaq.js";
 
-import MintifFab from "../component/MintifFab.vue";
-import { tibaDiHalaman } from "../composables/useMintifReveal.js";
-
 const { faqList } = useFaq();
 const sectionRefs = ref([]);
 const showScrollTop = ref(false);
