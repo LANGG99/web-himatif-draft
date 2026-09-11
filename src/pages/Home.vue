@@ -4,6 +4,8 @@ import Footer from "../component/Footer.vue";
 import { ref, onMounted, onUnmounted } from "vue";
 
 import FaqAccordion from "../component/FaqAccordion.vue";
+import MintifFab from "../component/MintifFab.vue";
+import { tibaDiHalaman } from "../composables/useMintifReveal.js";
 import { useFaq } from "../composables/constants/UseFaq.js";
 
 import MintifFab from "../component/MintifFab.vue";
