@@ -90,8 +90,8 @@ async function klik() {
     </transition>
     <!-- tombol: bulet 60px, putih, logo tengah simetris, shadow timbul + float tipis -->
     <button ref="tombol" @click="klik" aria-label="Buka Mintif" :aria-busy="mengecek"
-      class="fab-float grid h-[60px] w-[60px] place-items-center overflow-hidden rounded-full bg-[radial-gradient(circle_at_50%_38%,#FBFBFB_0%,#AF9D80_58%,#5E141B_100%)] outline-none focus-visible:ring-2 focus-visible:ring-khaki focus-visible:ring-offset-2 focus-visible:ring-offset-errie shadow-[0px_6px_20px_#000,0_0_0_2px_#AF9D80,0_0_28px_rgba(94,20,27,.75)]">
-      <img src="/images/mintif-fab.png" alt="Mintif" class="h-full w-full -translate-y-1 object-contain p-1" />
+      class="fab-float grid h-[60px] w-[60px] place-items-center overflow-hidden rounded-full bg-black outline-none focus-visible:ring-2 focus-visible:ring-khaki focus-visible:ring-offset-2 focus-visible:ring-offset-errie shadow-[0px_6px_20px_#000,0_0_0_2px_#AF9D80,0_0_28px_rgba(94,20,27,.75)]">
+      <img src="/images/mintif-fab.webp" alt="Mintif" class="h-full w-full object-cover" />
     </button>
   </div>
 </template>
