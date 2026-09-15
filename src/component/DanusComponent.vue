@@ -31,7 +31,7 @@ import { danusHeader, danusProducts, danusContacts } from "../composables/consta
         :initial="{ opacity: 0, y: 40 }"
         :visibleOnce="{ opacity: 1, y: 0, transition: { delay: 150 * index, duration: 800, ease: 'easeOut' } }"
         :hovered="{ y: -8, transition: { duration: 150, ease: 'easeOut' } }"
-        class="bg-cosmos/85 rounded-xl shadow-blacky overflow-hidden flex flex-col transition-all w-[calc(50%-6px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm border border-transparent hover:!border-khaki/70 duration-300"
+        class="bg-cosmos/85 rounded-xl shadow-blacky overflow-hidden flex flex-col transition-all w-[calc(50%-6px)] sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] max-w-sm border border-transparent hover:!border-khaki/50 duration-300"
       >
         <!-- Thumbnail Gambar -->
         <div class="relative w-full h-[140px] sm:h-[220px] lg:h-[250px] overflow-hidden bg-cosmos/90 shrink-0">

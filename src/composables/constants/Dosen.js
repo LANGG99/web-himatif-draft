@@ -7,7 +7,7 @@ export const dosenList = [
   },
   {
     nama: "Saryani.,S.Kom.,M.TI",
-    foto: "/images/dosen/Saryani.,S.Kom.,M.TI.png",
+    foto: "/images/dosen/Saryani.,S.Kom.,M.TI.webp",
     bidang: "Kaprodi Teknologi Informasi",
     kontak: "saryani@untara.ac.id",
   },
@@ -25,7 +25,7 @@ export const dosenList = [
   },
   {
     nama: "Rika Nurhidayah.,S.Kom.,M.Kom",
-    foto: "/images/dosen/Rika Nurhidayah.,S.Kom.,MM.png",
+    foto: "/images/dosen/Rika Nurhidayah.,S.Kom.,MM.webp",
     bidang: "Dosen Teknologi Informasi",
     kontak: "rikanurhidayah@untara.ac.id",
   },
@@ -37,13 +37,13 @@ export const dosenList = [
   },
   {
     nama: "Septa Febriyansyah.,S.M.,S.Kom.,M.Kom",
-    foto: "/images/dosen/Septa Febriyansyah.,S.M.,S.Kom.,M.Kom.png",
+    foto: "/images/dosen/Septa Febriyansyah.,S.M.,S.Kom.,M.Kom.webp",
     bidang: "Dosen Teknologi Informasi",
     kontak: "septaf@untara.ac.id",
   },
   {
     nama: "Amelia Sholikhaq, S.Kom.,M.Kom",
-    foto: "/images/dosen/Amelia Sholikhaq, S.Kom.,M.Kom..jpg",
+    foto: "/images/dosen/Amelia Sholikhaq, S.Kom.,M.Kom.webp",
     bidang: "Dosen Teknologi Informasi",
     kontak: "amelias@untara.ac.id",
   },
@@ -55,13 +55,13 @@ export const dosenList = [
   },
   {
     nama: "Bambang Libriantoro,  S.Kom.,M.Kom",
-    foto: "/images/dosen/Bambang Libriantoro,  S.Kom.,M.Kom.jpeg",
+    foto: "/images/dosen/Bambang Libriantoro,  S.Kom.,M.Kom.webp",
     bidang: "Dosen Teknologi Informasi",
     kontak: "bambangl@untara.ac.id",
   },
   {
     nama: "Ayi Krisnha W.A.N.,S.Kom.,M.Kom",
-    foto: "/images/dosen/AYI KRISNHA W.A.N.jpg",
+    foto: "/images/dosen/AYI KRISNHA W.A.N.webp",
     bidang: "Dosen Teknologi Informasi",
     kontak: "ayikrisnha@untara.ac.id",
   },
@@ -73,7 +73,7 @@ export const dosenList = [
   },
   {
     nama: "Ahmad Deni Muttaqin, S.Kom.,M.Si",
-    foto: "/images/dosen/Ahmad Deni Muttaqin, S.Kom.,M.S.jpg",
+    foto: "/images/dosen/Ahmad Deni Muttaqin, S.Kom.,M.S.webp",
     bidang: "Dosen Teknologi Informasi",
     kontak: "denim@untara.ac.id",
   },

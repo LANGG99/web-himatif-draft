@@ -58,11 +58,16 @@ onUnmounted(() => {
 
     <div v-else>
       <!-- HERO: berita terbaru, full-width -->
-      <article v-if="featured" @click="bukaBerita(featured)" @keyup.enter="bukaBerita(featured)" tabindex="0"
-        class="group cursor-pointer block w-full mb-10 overflow-hidden rounded-2xl ring-1 ring-holy/10 hover:ring-khaki/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.8)]">
+      <article
+        v-if="featured"
+        @click="bukaBerita(featured)"
+        @keyup.enter="bukaBerita(featured)"
+        tabindex="0"
+        class="group cursor-pointer block w-full mb-10 overflow-hidden rounded-2xl ring-1 ring-holy/10 hover:ring-khaki/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.8)]"
+      >
         <div class="relative">
           <div v-if="featured.gambar" class="w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden bg-gradient-to-br from-cosmos to-errie">
-            <img :src="featured.gambar" :alt="featured.judul" @error="$event.target.style.display='none'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+            <img :src="featured.gambar" :alt="featured.judul" @error="$event.target.style.display = 'none'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
           </div>
           <div v-else class="w-full aspect-[16/9] sm:aspect-[21/9] bg-gradient-to-br from-cosmos via-errie to-charcoal flex items-center justify-center px-6">
             <span class="text-holy/30 font-bold text-3xl sm:text-5xl uppercase tracking-widest text-center">{{ featured.kategori }}</span>
@@ -92,10 +97,16 @@ onUnmounted(() => {
 
       <!-- GRID: sisanya, lega scroll natural -->
       <div v-if="beritaLain.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-        <article v-for="berita in beritaLain" :key="berita.id" @click="bukaBerita(berita)" @keyup.enter="bukaBerita(berita)" tabindex="0"
-          class="group cursor-pointer overflow-hidden rounded-2xl bg-cosmos/85 ring-1 ring-transparent hover:ring-khaki/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.8)] flex flex-col">
+        <article
+          v-for="berita in beritaLain"
+          :key="berita.id"
+          @click="bukaBerita(berita)"
+          @keyup.enter="bukaBerita(berita)"
+          tabindex="0"
+          class="group cursor-pointer overflow-hidden rounded-2xl bg-cosmos/85 ring-1 ring-transparent hover:ring-khaki/60 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.8)] flex flex-col"
+        >
           <div v-if="berita.gambar" class="w-full aspect-video overflow-hidden bg-gradient-to-br from-cosmos to-errie">
-            <img :src="berita.gambar" :alt="berita.judul" @error="$event.target.style.display='none'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+            <img :src="berita.gambar" :alt="berita.judul" @error="$event.target.style.display = 'none'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
           </div>
           <div v-else class="w-full aspect-video bg-gradient-to-br from-cosmos to-errie flex items-center justify-center px-4">
             <span class="text-holy/30 font-bold text-xl uppercase tracking-widest text-center">{{ berita.kategori }}</span>
@@ -141,7 +152,9 @@ onUnmounted(() => {
 }
 .berita-modal-enter-active .berita-panel,
 .berita-modal-leave-active .berita-panel {
-  transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1), opacity 0.3s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 0.3s ease;
 }
 .berita-modal-enter-from .berita-panel {
   opacity: 0;

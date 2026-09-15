@@ -2,6 +2,9 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import Berita from "../component/Berita.vue";
 import Footer from "../component/Footer.vue";
+import { getSortedBerita } from "../composables/constants/Berita";
+
+const adaBerita = false; // false jika berita ga ada || getSortedBerita().length > 0; jika berita udah ada
 
 const showScrollTop = ref(false);
 
@@ -23,7 +26,7 @@ onUnmounted(() => {
 
 <template>
   <!-- Hero Section (bg-fixed disamakan persis dengan Danus) -->
-  <section class="overflow-hidden w-full h-[740px] bg-Home bg-no-repeat bg-center bg-fixed bg-cover">
+  <section v-if="adaBerita" class="overflow-hidden w-full h-[740px] bg-Home bg-no-repeat bg-center bg-fixed bg-cover">
     <div class="bg-black/75 h-full flex flex-col my-auto justify-center">
       <!-- Logo Container (Disamakan persis struktur & margin logo Danus) -->
       <div
@@ -97,8 +100,27 @@ onUnmounted(() => {
   </section>
 
   <!-- Body Section -->
-  <section id="beritaList" class="w-full h-full lg:pb-[140px] py-5 bg-gradient-to-r from-errie to-charcoal">
+  <section v-if="adaBerita" id="beritaList" class="w-full h-full lg:pb-[140px] py-5 bg-gradient-to-r from-errie to-charcoal">
     <Berita />
+  </section>
+
+  <!-- Empty State: tampil kalau belum ada berita -->
+  <section v-if="!adaBerita" class="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+    <div class="bg-white p-8 rounded-xl shadow-md text-center max-w-md w-full">
+      <div class="text-cosmos mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M12 12v.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <h2 class="text-2xl font-semibold text-gray-800 mb-2">Belum Ada Berita atau Pengumuman</h2>
+      <p class="text-gray-600 mb-6">Maaf, saat ini belum ada berita yang dipublikasikan. Silakan kembali lagi nanti.</p>
+      <router-link to="/" class="inline-flex items-center bg-cosmos text-white px-4 py-2 rounded hover:bg-errie transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9.75L12 3l9 6.75V21a.75.75 0 01-.75.75H3.75A.75.75 0 013 21V9.75z" />
+        </svg>
+        Kembali ke Beranda
+      </router-link>
+    </div>
   </section>
 
   <!-- Scroll to Top Button -->

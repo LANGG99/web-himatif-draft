@@ -42,7 +42,7 @@ import { advokasiHeader, advokasiServices, advokasiContacts } from "../composabl
         :initial="{ opacity: 0, y: 40 }"
         :visibleOnce="{ opacity: 1, y: 0, transition: { delay: 200 * index, duration: 800, ease: 'easeOut' } }"
         :hovered="{ y: -8, transition: { duration: 150, ease: 'easeOut' } }"
-        class="bg-cosmos/85 p-6 rounded-xl shadow-blacky flex flex-row items-start gap-4 border border-transparent hover:!border-khaki/70 transition-all duration-300 w-full overflow-hidden"
+        class="bg-cosmos/85 p-6 rounded-xl shadow-blacky flex flex-row items-start gap-4 border border-transparent hover:!border-khaki/50 transition-all duration-300 w-full overflow-hidden"
       >
         <!-- Ikon SVG berdasarkan urutan index -->
         <div class="text-khaki shrink-0 mt-1">
