@@ -16,7 +16,7 @@ export const navLinks = [
       { label: "Danus", href: "/Danus" },
     ],
   },
-  { label: "Karya Mahasiswa", href: "/Karya" },
+  // { label: "Karya Mahasiswa", href: "/Karya" },
   { label: "Profil", href: "/Profile" },
   { label: "Tentang Kami", href: "/About" },
   // { label: "Bengkel IT", href: "/Bengkel" },

@@ -1056,12 +1056,12 @@ video {
   max-height: 92vh;
 }
 
-.min-h-screen{
-  min-height: 100vh;
-}
-
 .min-h-72{
   min-height: 18rem;
+}
+
+.min-h-screen{
+  min-height: 100vh;
 }
 
 .w-12{
@@ -1173,6 +1173,10 @@ video {
   max-width: 48rem;
 }
 
+.max-w-4xl{
+  max-width: 56rem;
+}
+
 .max-w-5xl{
   max-width: 64rem;
 }
@@ -1207,10 +1211,6 @@ video {
 
 .max-w-xl{
   max-width: 36rem;
-}
-
-.max-w-4xl{
-  max-width: 56rem;
 }
 
 .flex-1{
@@ -1417,10 +1417,6 @@ video {
   gap: 1.5rem;
 }
 
-.gap-8{
-  gap: 2rem;
-}
-
 .space-y-2\.5 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));
@@ -1547,10 +1543,6 @@ video {
   border-color: rgb(175 157 128 / var(--tw-border-opacity, 1));
 }
 
-.border-khaki\/20{
-  border-color: rgb(175 157 128 / 0.2);
-}
-
 .border-khaki\/30{
   border-color: rgb(175 157 128 / 0.3);
 }
@@ -1650,10 +1642,6 @@ video {
 .bg-khaki{
   --tw-bg-opacity: 1;
   background-color: rgb(175 157 128 / var(--tw-bg-opacity, 1));
-}
-
-.bg-khaki\/10{
-  background-color: rgb(175 157 128 / 0.1);
 }
 
 .bg-khaki\/20{
@@ -2493,25 +2481,21 @@ video {
   border-style: none;
 }
 
-.hover\:\!border-khaki\/70:hover{
-  border-color: rgb(175 157 128 / 0.7) !important;
-}
-
-.hover\:border-khaki\/30:hover{
-  border-color: rgb(175 157 128 / 0.3);
+.hover\:\!border-khaki\/50:hover{
+  border-color: rgb(175 157 128 / 0.5) !important;
 }
 
 .hover\:border-khaki\/50:hover{
   border-color: rgb(175 157 128 / 0.5);
 }
 
-.hover\:\!border-khaki\/50:hover{
-  border-color: rgb(175 157 128 / 0.5) !important;
-}
-
 .hover\:bg-cosmos:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(94 20 27 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-cosmos\/85:hover{
+  background-color: rgb(94 20 27 / 0.85);
 }
 
 .hover\:bg-errie:hover{
@@ -2534,10 +2518,6 @@ video {
 
 .hover\:bg-khaki\/80:hover{
   background-color: rgb(175 157 128 / 0.8);
-}
-
-.hover\:bg-cosmos\/85:hover{
-  background-color: rgb(94 20 27 / 0.85);
 }
 
 .hover\:bg-gradient-to-br:hover{
@@ -3005,10 +2985,6 @@ video {
 
   .lg\:rounded-md{
     border-radius: 0.375rem;
-  }
-
-  .lg\:p-8{
-    padding: 2rem;
   }
 
   .lg\:px-0{
