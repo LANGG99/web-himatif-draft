@@ -17,7 +17,7 @@ export const danusProducts = [
     category: "pdl",
     price: 170000,
     description: "Baju Angkatan Teknologi Informasi.",
-    image: "/images/Danus/PDL-hima.webp",
+    image: "/images/DANUS/PDL-hima.webp",
   },
   {
     id: 2,
@@ -25,7 +25,7 @@ export const danusProducts = [
     category: "merch",
     price: 5000,
     description: "Gantungan kunci yang memiliki design eksklusif dengan gaya minimalis.",
-    image: "/images/Danus/Ganci-TI.webp",
+    image: "/images/DANUS/Ganci-TI.webp",
   },
   // {
   //   id: 3,
