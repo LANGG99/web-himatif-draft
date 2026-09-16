@@ -67,7 +67,7 @@ export const dosenList = [
   },
   {
     nama: "Singgih mitro, s, S.T,M.T.",
-    foto: "/images/dosen/Singgih mitro, s, S.T.,M.T.jpg",
+    foto: "/images/dosen/emot.jpg",
     bidang: "Dosen Teknologi Informasi",
     kontak: "singgihm@untara.ac.id",
   },
@@ -76,5 +76,23 @@ export const dosenList = [
     foto: "/images/dosen/Ahmad Deni Muttaqin, S.Kom.,M.S.webp",
     bidang: "Dosen Teknologi Informasi",
     kontak: "denim@untara.ac.id",
+  },
+  {
+    nama: "Yani Sugiyani.,S.Kom.,M.Kom.,MM",
+    foto: "/images/dosen/Yani Sugiyani.,S.Kom.,M.Kom.,MM.webp",
+    bidang: "Dosen Teknologi Informasi",
+    // kontak: "denim@untara.ac.id",
+  },
+  {
+    nama: "Syefri Maulana Husain.,S.Kom.,M.TI",
+    foto: "/images/dosen/Syefri Maulana Husain.,S.Kom.,M.TI.webp",
+    bidang: "Dosen Teknologi Informasi",
+    // kontak: "denim@untara.ac.id",
+  },
+  {
+    nama: "Dedi Gunawan S.T.,M.kom",
+    foto: "/images/dosen/emot.jpg",
+    bidang: "Dosen Teknologi Informasi",
+    // kontak: "denim@untara.ac.id",
   },
 ];
