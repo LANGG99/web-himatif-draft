@@ -13,3 +13,15 @@ img {
   -webkit-touch-callout: none;
   -webkit-user-drag: none;
 }
+
+/* Hero HP: gambar landscape 3110x1350 + bg-cover = ngezoom, isinya kepotong.
+   Mobile (<640px): contain biar utuh + hero dipendekin + fixed dimatiin
+   (bg-fixed rusak di iOS/Android). Desktop tetap cover penuh. */
+@media (max-width: 639px) {
+  section.bg-Home {
+    background-size: contain;
+    background-attachment: scroll;
+    background-color: #1c1f23;
+    height: 420px;
+  }
+}
