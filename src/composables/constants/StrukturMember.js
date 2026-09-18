@@ -59,13 +59,13 @@ export const divisions = [
   {
     name: "Dana & Usaha",
     images: [
-      { src: "/images/Danus/Nabila Rahma Fitriana.webp", name: "Nabila Rahma Fitriana", jabatan: "Ketua Departemen", instagram: "https://www.instagram.com/nabila_rftrn/" },
-      { src: "/images/Danus/Dimas Bayu Wibiastanto.webp", name: "Dimas Bayu Wibiastanto", jabatan: "Sekretaris", instagram: "https://www.instagram.com/bayysaje/" },
-      { src: "/images/Danus/M. Rama Rizky.webp", name: "M. Rama Rizky", jabatan: "Ketua Divisi Produksi & Kreatif", instagram: "https://www.instagram.com/_aqqhew/" },
-      { src: "/images/Danus/M. Halid Rizky.webp", name: "M. Halid Rizky", jabatan: "Anggota", instagram: "https://www.instagram.com/hhahalid/" },
-      // { src: "/images/Danus/Fahmi Rizky F.webp", name: "Fahmi Rizky F", jabatan: "Anggota", instagram: "https://www.instagram.com/?/" },
-      { src: "/images/Danus/Muhamad Faiz Firmansyah.webp", name: "Muhamad Faiz Firmansyah", jabatan: "Anggota", instagram: "https://www.instagram.com/vaizyco_/" },
-      { src: "/images/Danus/Muhamad Faiq Fadhoilurrofiq.webp", name: "Muhamad Faiq Fadhoilurrofiq", jabatan: "Anggota", instagram: "https://www.instagram.com/faiq.uhuyy/" },
+      { src: "/images/DANUS/Nabila Rahma Fitriana.webp", name: "Nabila Rahma Fitriana", jabatan: "Ketua Departemen", instagram: "https://www.instagram.com/nabila_rftrn/" },
+      { src: "/images/DANUS/Dimas Bayu Wibiastanto.webp", name: "Dimas Bayu Wibiastanto", jabatan: "Sekretaris", instagram: "https://www.instagram.com/bayysaje/" },
+      { src: "/images/DANUS/M. Rama Rizky.webp", name: "M. Rama Rizky", jabatan: "Ketua Divisi Produksi & Kreatif", instagram: "https://www.instagram.com/_aqqhew/" },
+      { src: "/images/DANUS/M. Halid Rizky.webp", name: "M. Halid Rizky", jabatan: "Anggota", instagram: "https://www.instagram.com/hhahalid/" },
+      // { src: "/images/DANUS/Fahmi Rizky F.webp", name: "Fahmi Rizky F", jabatan: "Anggota", instagram: "https://www.instagram.com/?/" },
+      { src: "/images/DANUS/Muhamad Faiz Firmansyah.webp", name: "Muhamad Faiz Firmansyah", jabatan: "Anggota", instagram: "https://www.instagram.com/vaizyco_/" },
+      { src: "/images/DANUS/Muhamad Faiq Fadhoilurrofiq.webp", name: "Muhamad Faiq Fadhoilurrofiq", jabatan: "Anggota", instagram: "https://www.instagram.com/faiq.uhuyy/" },
     ],
   },
   {
