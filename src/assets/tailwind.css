@@ -2,3 +2,14 @@
 @tailwind components;
 @tailwind base;
 @tailwind utilities;
+
+/* Anti-copy gambar: tahan-simpan (iOS callout) + drag desktop mati + teks
+   gambar ga keseleksi. Klik/link tetap jalan (tanpa pointer-events:none).
+   Bukan 100% (DevTools/screenshot tetap bisa), tapi maling kasual ketahan. */
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+}

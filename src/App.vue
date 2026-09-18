@@ -1,5 +1,14 @@
 <script setup>
+import { onMounted, onUnmounted } from "vue";
 import Navigation from "./component/Navigation.vue";
+
+// Anti-copy gambar: klik kanan tepat di <img> diblok (tahan-simpan HP +
+// save-image desktop ketahan). Klik kanan teks/link tetap normal.
+function blokMenuGambar(e) {
+  if (e.target && e.target.tagName === "IMG") e.preventDefault();
+}
+onMounted(() => document.addEventListener("contextmenu", blokMenuGambar));
+onUnmounted(() => document.removeEventListener("contextmenu", blokMenuGambar));
 </script>
 
 <template>

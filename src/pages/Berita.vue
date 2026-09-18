@@ -41,11 +41,11 @@ onUnmounted(() => {
         class="relative mt-28 flex flex-row w-full lg:w-auto max-w-[350px] sm:max-w-none lg:mt-36 h-auto mx-auto px-2 lg:px-0 justify-center items-center gap-1 z-10"
       >
         <!-- Logo Untara -->
-        <img src="/images/untara.webp" alt="Universitas Tangerang Raya" class="w-[90px] lg:w-[170px] h-fit mr-4 lg:mr-10 object-contain" />
+        <img draggable="false" src="/images/untara.webp" alt="Universitas Tangerang Raya" class="w-[90px] lg:w-[170px] h-fit mr-4 lg:mr-10 object-contain" />
         <!-- Logo Himatif -->
-        <img src="/images/LogoHimatif.webp" alt="Himatif Untara" class="w-[90px] lg:w-[170px] h-fit ml-1 lg:ml-0 object-contain" />
+        <img draggable="false" src="/images/LogoHimatif.webp" alt="Himatif Untara" class="w-[90px] lg:w-[170px] h-fit ml-1 lg:ml-0 object-contain" />
         <!-- Logo Arthasa -->
-        <img src="/images/Arthasa.webp" alt="Arthasa" class="w-[125px] lg:w-[230px] h-fit lg:ml-4 mt-4 object-contain" />
+        <img draggable="false" src="/images/Arthasa.webp" alt="Arthasa" class="w-[125px] lg:w-[230px] h-fit lg:ml-4 mt-4 object-contain" />
       </div>
 
       <!-- Text Container -->

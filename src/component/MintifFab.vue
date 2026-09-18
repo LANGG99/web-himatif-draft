@@ -98,7 +98,7 @@ async function klik() {
     <div class="fab-ground" aria-hidden="true"></div>
     <button ref="tombol" @click="klik" aria-label="Buka Mintif" aria-describedby="mintif-tip" :aria-busy="mengecek"
       class="fab-float grid h-[60px] w-[60px] place-items-center rounded-full bg-transparent outline-none focus-visible:ring-2 focus-visible:ring-khaki focus-visible:ring-offset-2 focus-visible:ring-offset-errie">
-      <img src="/images/mintif-fab.webp" alt="Mintif" class="fab-logo h-full w-full object-contain" />
+      <img draggable="false" src="/images/mintif-fab.webp" alt="Mintif" class="fab-logo h-full w-full object-contain" />
     </button>
   </div>
 </template>

@@ -51,7 +51,7 @@ function kembali(e) {
 <template>
   <section class="min-h-screen flex items-center justify-center bg-errie px-4 py-10">
     <div class="w-full max-w-md rounded-3xl bg-gradient-to-b from-cosmos to-errie px-6 py-10 text-center text-holy ring-1 ring-khaki/60 shadow-blacky">
-      <img src="/images/mintif-logo.webp" alt="Mintif" class="mx-auto h-24 w-24 rounded-full object-contain" />
+      <img draggable="false" src="/images/mintif-logo.webp" alt="Mintif" class="mx-auto h-24 w-24 rounded-full object-contain" />
       <!-- Mimin lagi ngoprek: gear muter + kunci inggris -->
       <div class="mt-4 flex items-center justify-center gap-2 text-khaki" aria-hidden="true">
         <Cog class="h-8 w-8 motion-safe:animate-spin-slow" />
