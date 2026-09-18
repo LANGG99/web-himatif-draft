@@ -7,9 +7,14 @@ const offset = ref(0);
 const isHovered = ref(false);
 
 // Responsive image width
-const imageWidth = ref(window.innerWidth < 768 ? 160 : 300);
+function getImageWidth() {
+  if (window.innerWidth < 380) return 130;
+  if (window.innerWidth < 768) return 160;
+  return 300;
+}
+const imageWidth = ref(getImageWidth());
 function handleResize() {
-  imageWidth.value = window.innerWidth < 768 ? 160 : 300;
+  imageWidth.value = getImageWidth();
 }
 window.addEventListener("resize", handleResize);
 
@@ -125,7 +130,7 @@ watch(selectedDivision, () => {
     <div class="relative overflow-x-auto overflow-y-hidden max-w-6xl mx-auto px-4 group touch-pan-x" style="scrollbar-width: none; -ms-overflow-style: none">
       <div class="flex" :class="{ 'justify-center flex-wrap': !shouldAnimate }" :style="shouldAnimate ? { transform: `translateX(${offset}px)`, minWidth: 'max-content' } : {}" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
         <template v-for="(img, index) in shouldAnimate ? loopImages : selectedDivision.images" :key="index">
-          <div class="flex bg-transparent rounded-md flex-col items-center mx-2 flex-shrink-0 hover:scale-105" :style="{ width: imageWidth + 'px' }">
+          <div class="flex bg-transparent rounded-md flex-col items-center flex-shrink-0 hover:scale-105" :class="shouldAnimate ? 'mx-2' : 'mx-1'" :style="{ width: imageWidth + 'px' }">
             <img
               :src="img.src"
               :alt="img.name"
