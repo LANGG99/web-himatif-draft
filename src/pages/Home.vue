@@ -30,8 +30,11 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="overflow-hidden w-full h-[740px] bg-Home bg-no-repeat bg-center bg-fixed bg-cover">
-    <div class="bg-black/75 h-full flex flex-col my-auto justify-center">
+  <section class="hero-home overflow-hidden w-full h-[740px] bg-Home bg-no-repeat bg-center bg-fixed bg-cover">
+    <!-- Mobile (<640px): foto utuh via <img>, background Home dimatiin CSS.
+         Desktop: hidden, tetap background cover. -->
+    <img draggable="false" src="/images/Home.webp" alt="Kabinet Arthasa periode 2026/2027" class="hero-mobile-img w-full h-auto object-contain" />
+    <div class="hero-overlay bg-black/75 h-full flex flex-col my-auto justify-center">
       <div
         v-motion
         :initial="{ opacity: 0, x: -100 }"
@@ -94,7 +97,7 @@ onUnmounted(() => {
             transition: { duration: 2000, ease: 'easeOut' },
           }"
           :delay="500"
-          class="mx-auto mt-10 w-fit h-fit bg-cosmos p-2 rounded-full animate-bounce cursor-pointer"
+          class="hero-scrollhint mx-auto mt-10 w-fit h-fit bg-cosmos p-2 rounded-full animate-bounce cursor-pointer"
         >
           <!-- Pastikan href sesuai dengan id section di bawahnya -->
           <a href="#vision" aria-label="Scroll Down">
