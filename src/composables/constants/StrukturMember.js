@@ -2,7 +2,7 @@ export const divisions = [
   {
     name: "KSB",
     images: [
-      { src: "/images/KSB/Anindita Bunkal.webp", name: "Anindita Bunkal", jabatan: "Ketua Himpunan", instagram: "https://www.instagram.com/indi.b_/" },
+      { src: "/images/KSB/ANINDITA BUNKAL.webp", name: "Anindita Bunkal", jabatan: "Ketua Himpunan", instagram: "https://www.instagram.com/indi.b_/" },
       { src: "/images/KSB/M.dimas Bayu Pratama.webp", name: "Muhamad Dimas Bayu Pratama", jabatan: "Wakil Ketua", instagram: "https://www.instagram.com/massbayy88/" },
       { src: "/images/KSB/Cucumu Indah Amumpuni Pitalenti Widodo.webp", name: "Cucumu Indah Amumpuni Pitalenti Widodo", jabatan: "Sekretaris", instagram: "https://www.instagram.com/ccminddd/" },
       { src: "/images/KSB/Iqra Tri Karunia.webp", name: "Iqra Tri Karunia", jabatan: "Bendahara 1", instagram: "https://www.instagram.com/iqratr/" },

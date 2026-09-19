@@ -51,11 +51,11 @@ onUnmounted(() => {
         <!-- <div class="block lg:hidden absolute right-[18px] top-[60%] -translate-y-1/2 w-[100px] h-[100px] animate-floates bg-cosmos bg-gradient-to-l from-cosmos from-56% to-khaki rounded-2xl -z-10"></div> -->
         <!-- Logo Untara -->
         <!-- Logo Untara -->
-        <img draggable="false" src="/public/images/untara.webp" alt="Universitas Tangerang Raya" class="w-[90px] lg:w-[170px] h-fit mr-4 lg:mr-10 object-contain" />
+        <img draggable="false" src="/images/untara.webp" alt="Universitas Tangerang Raya" class="w-[90px] lg:w-[170px] h-fit mr-4 lg:mr-10 object-contain" />
         <!-- Logo Himatif -->
-        <img draggable="false" src="/public/images/LogoHimatif.webp" alt="Himatif Untara" class="w-[90px] lg:w-[170px] h-fit ml-1 lg:ml-0 object-contain" />
+        <img draggable="false" src="/images/LogoHimatif.webp" alt="Himatif Untara" class="w-[90px] lg:w-[170px] h-fit ml-1 lg:ml-0 object-contain" />
         <!-- Logo Arthasa -->
-        <img draggable="false" src="/public/images/Arthasa.webp" alt="Arthasa" class="w-[125px] lg:w-[230px] h-fit lg:ml-4 mt-4 object-contain" />
+        <img draggable="false" src="/images/Arthasa.webp" alt="Arthasa" class="w-[125px] lg:w-[230px] h-fit lg:ml-4 mt-4 object-contain" />
       </div>
 
       <div class="text-holy text-center my-4">
